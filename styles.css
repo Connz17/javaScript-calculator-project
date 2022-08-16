@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 20%;
+}
+
+main {
+  width: 100%;
+  height: 60%;
+}
+
+.calculator {
+  margin: auto;
+  width: 30%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+  grid-template-rows: 3fr 2fr 2fr 2fr 2fr 2fr;
+  gap: 10px;
+  grid-template-areas: "calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen" ". AC brackets percentage divide ." ". 7 8 9 X ." ". 4 5 6 - ." ". 1 2 3 + ." ". 0 . < = .";
+  background-color: blueviolet;
+}
+
+footer {
+  width: 100%;
+  height: 20%;
+}
