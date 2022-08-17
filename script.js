@@ -4,17 +4,17 @@ press1.addEventListener("click", myFunction);
 
 function myFunction() {
     console.log(1)
-    document.getElementById("screen").innerHTML = "1";
+    document.getElementById("screenCurr").innerHTML = "1";
 }
 
 const press2 = document.getElementById("two");
 press2.addEventListener("click", function() {
-    document.getElementById("screen").innerHTML = "2";
+    document.getElementById("screenCurr").innerHTML = "2";
 });
 
 const press3 = document.getElementById("three");
     press3.onclick = function() {
-        document.getElementById("screen").innerHTML = "3"; 
+        document.getElementById("screenCurr").innerHTML = "3"; 
     }
 
 const numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]

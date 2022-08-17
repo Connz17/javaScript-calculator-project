@@ -32,7 +32,7 @@ main {
     ". seven eight nine multiply ."
     ". four five six takeAway ."
     ". one two three plus ."
-    ". nil decimal back equals .";
+    ". nil decimal delete equals .";
 
     border-radius: 20px;
     box-shadow: 7px 5px 5px black;
@@ -45,10 +45,25 @@ main {
         grid-area: calculator__screen;
         width: 90%;
         height: 75%;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
 
         background-color: azure;
         border-radius: 15px;
+
+        #screenPrev {
+            max-width: 100%;
+            height: 50%;
+
+            // border: solid 2px rgb(21, 255, 0);
+        }
+
+        #screenCurr {
+            max-width: 100%;
+            height: 50%;
+
+            // border: solid 2px red;
+        }
 
     }
 
@@ -136,8 +151,8 @@ main {
         grid-area: decimal;
     }
 
-    #back {
-        grid-area: back;
+    #delete {
+        grid-area: delete;
     }
 
     #equals {
