@@ -16,14 +16,95 @@ main {
 
 .calculator {
   margin: auto;
-  width: 30%;
-  height: auto;
+  width: 20%;
+  height: 80%;
+  align-items: center;
+  justify-items: center;
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
-  grid-template-rows: 3fr 2fr 2fr 2fr 2fr 2fr;
+  grid-template-rows: 4fr 2fr 2fr 2fr 2fr 2fr;
   gap: 10px;
-  grid-template-areas: "calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen" ". AC brackets percentage divide ." ". 7 8 9 X ." ". 4 5 6 - ." ". 1 2 3 + ." ". 0 . < = .";
+  grid-template-areas: "calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen" ". AC brackets percentage divide ." ". seven eight nine multiply ." ". four five six takeAway ." ". one two three plus ." ". nil decimal back equals .";
+  border-radius: 20px;
+  box-shadow: 7px 5px 5px black;
   background-color: blueviolet;
+}
+.calculator__screen {
+  grid-area: calculator__screen;
+  width: 90%;
+  height: 75%;
+  text-align: center;
+  background-color: azure;
+  border-radius: 15px;
+}
+.calculator__buttons {
+  width: 100%;
+  height: 45%;
+  text-align: center;
+  padding-top: 7px;
+  border-radius: 10px;
+  background-color: aqua;
+  box-shadow: 5px 3px 2px black;
+}
+.calculator #AC {
+  grid-area: AC;
+}
+.calculator #brackets {
+  grid-area: brackets;
+}
+.calculator #percentage {
+  grid-area: percentage;
+}
+.calculator #divide {
+  grid-area: divide;
+}
+.calculator #seven {
+  grid-area: seven;
+}
+.calculator #eight {
+  grid-area: eight;
+}
+.calculator #nine {
+  grid-area: nine;
+}
+.calculator #multiply {
+  grid-area: multiply;
+}
+.calculator #four {
+  grid-area: four;
+}
+.calculator #five {
+  grid-area: five;
+}
+.calculator #six {
+  grid-area: six;
+}
+.calculator #takeAway {
+  grid-area: takeAway;
+}
+.calculator #one {
+  grid-area: one;
+}
+.calculator #two {
+  grid-area: two;
+}
+.calculator #three {
+  grid-area: three;
+}
+.calculator #plus {
+  grid-area: plus;
+}
+.calculator #nil {
+  grid-area: nil;
+}
+.calculator #decimal {
+  grid-area: decimal;
+}
+.calculator #back {
+  grid-area: back;
+}
+.calculator #equals {
+  grid-area: equals;
 }
 
 footer {
