@@ -27,6 +27,7 @@ main {
   grid-template-areas: "calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen" ". AC brackets percentage divide ." ". seven eight nine multiply ." ". four five six takeAway ." ". one two three plus ." ". nil decimal delete equals .";
   border-radius: 20px;
   box-shadow: 7px 5px 5px black;
+  cursor: pointer;
   background-color: blueviolet;
 }
 .calculator__screen {
@@ -35,6 +36,8 @@ main {
   height: 75%;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
   background-color: azure;
   border-radius: 15px;
 }
@@ -114,6 +117,10 @@ main {
 }
 .calculator #equals {
   grid-area: equals;
+}
+
+.calculator__buttons:hover {
+  background-color: whitesmoke;
 }
 
 footer {

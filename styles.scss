@@ -36,6 +36,7 @@ main {
 
     border-radius: 20px;
     box-shadow: 7px 5px 5px black;
+    cursor:pointer;
 
     background-color: blueviolet;
 
@@ -47,6 +48,8 @@ main {
         height: 75%;
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
 
         background-color: azure;
         border-radius: 15px;
@@ -163,7 +166,9 @@ main {
 
 }
 
-
+.calculator__buttons:hover {
+    background-color:whitesmoke;
+}
 
 
 
