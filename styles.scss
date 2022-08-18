@@ -28,7 +28,7 @@ main {
     gap: 10px;
     grid-template-areas: 
     "calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen"
-    ". AC brackets percentage divide ."
+    ". AC root percentage divide ."
     ". seven eight nine multiply ."
     ". four five six takeAway ."
     ". one two three plus ."
@@ -80,14 +80,37 @@ main {
         background-color: aqua;
         box-shadow: 5px 3px 2px black;
 
+        &--number {
+        width: 100%;
+        height: 45%;
+        text-align: center;
+        padding-top: 7px;
+
+        border-radius: 10px;
+        background-color: rgb(21, 255, 0);
+        box-shadow: 5px 3px 2px black;
+
+        }
+
+
+        &--operation {
+        width: 100%;
+        height: 45%;
+        text-align: center;
+        padding-top: 7px;
+
+        border-radius: 10px;
+        background-color: rgb(255, 221, 0);
+        box-shadow: 5px 3px 2px black;
+        }
     }
 
     #AC {
         grid-area: AC;
     }
 
-    #brackets {
-        grid-area: brackets;
+    #root {
+        grid-area: root;
     }
 
     #percentage {
@@ -170,6 +193,13 @@ main {
     background-color:whitesmoke;
 }
 
+.calculator__buttons--number:hover {
+    background-color:whitesmoke;
+}
+
+.calculator__buttons--operation:hover {
+    background-color:whitesmoke;
+}
 
 
 

@@ -26,4 +26,45 @@
 //      numberButton.addEventListener("click", handleNumberPress);
 //    });
 
-const numbers = document.getElementsByClassName("number");
+
+// set previous number variable equal to zero. 
+
+const numbers = document.getElementsByClassName("calculator__buttons--number");
+console.log(numbers);
+
+const operation = document.getElementsByClassName("calculator__buttons--operation");
+console.log(operation);
+
+const currentSc = document.getElementById("screenCurr");
+console.log(currentSc);
+
+const previousSc = document.getElementById("screenPrev");
+console.log(previousSc);
+
+const clear = document.getElementById("AC");
+console.log(clear);
+
+const cancel = document.getElementById("delete");
+console.log(cancel);
+
+const total = document.getElementById("equals");
+console.log(total);
+
+
+let previousNumb = (" ");
+console.log(previousNumb);
+
+
+
+const handleNumberPress = () => {
+    previousNumb += numbers     
+    console.log(handleNumberPress);
+    }
+
+
+
+    numbers.forEach((number) => {
+        number.addEventListener("click", handleNumberPress);
+    });
+
+

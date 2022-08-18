@@ -19,4 +19,29 @@
 // numbers.forEach((numberButton) => {
 //      numberButton.addEventListener("click", handleNumberPress);
 //    });
-var numbers = document.getElementsByClassName("number");
+// set previous number variable equal to zero. 
+var numbers = document.getElementsByClassName("calculator__buttons--number");
+console.log(numbers);
+var operation = document.getElementsByClassName("calculator__buttons--operation");
+console.log(operation);
+var currentSc = document.getElementById("screenCurr");
+console.log(currentSc);
+var previousSc = document.getElementById("screenPrev");
+console.log(previousSc);
+var clear = document.getElementById("AC");
+console.log(clear);
+var cancel = document.getElementById("delete");
+console.log(cancel);
+var total = document.getElementById("equals");
+console.log(total);
+var previousNumb = " ";
+console.log(previousNumb);
+
+var handleNumberPress = function handleNumberPress() {
+  previousNumb += numbers;
+  console.log(handleNumberPress);
+};
+
+numbers.forEach(function (number) {
+  number.addEventListener("click", handleNumberPress);
+});
