@@ -1,35 +1,5 @@
 "use strict";
 
-// // getElementsByTagName
-// const todoHeading = document.getElementsByTagName("h1")[0];
-// todoHeading.innerHTML += " Today!";
-// console.log(todoHeading);
-// // getElementsByClassName
-// // getElementById
-// const addButton = document.getElementById("add-button");
-// console.log(addButton);
-// // querySelector
-// const inputBox = document.querySelector("input");
-// console.log(inputBox);
-// const list = document.querySelector("ul");
-// console.log(list);
-// // querySelectorAll
-// const items = document.querySelectorAll("li");
-// console.log(items);
-// numbers.forEach((numberButton) => {
-//      numberButton.addEventListener("click", handleNumberPress);
-//    });
-// set previous number variable equal to zero. 
-// let previousNumb = (" ");
-// console.log(previousNumb);
-// const handleNumberPress = () => {
-//     previousNumb += numbers     
-//     console.log(handleNumberPress);
-//     }
-//     numbers.forEach((number) => {
-//         number.addEventListener("click", handleNumberPress);
-//     });
-// functions of My calculator:
 // ALL HTML elements is variables:
 var numbersButton = document.getElementsByClassName("calculator__buttons--number");
 console.log(numbersButton);
@@ -63,7 +33,44 @@ clear = function clear() {
 back = function back() {
   currentSc.innerText = currentSc.innerText.toString().slice(0, -1);
 }; // Final total function 
-// Add Number button click functionality 
+
+
+answer = function answer() {
+  var total;
+  var enteredNum = parseFloat(previousSc.innerText);
+  var newNum = parseFloat(currentSc.innerText);
+
+  switch (operation.innerText) {
+    case "+":
+      total = enteredNum + newNum;
+      break;
+
+    case "-":
+      total = enteredNum - newNum;
+      break;
+
+    case "*":
+      total = enteredNum * newNum;
+      break;
+
+    case "÷":
+      total = enteredNum / newNum;
+      break;
+
+    case "%":
+      total = enteredNum % newNum;
+      break;
+
+    case "√":
+      total = Math.sqrt(enteredNum);
+
+    default:
+      break;
+  }
+
+  currentSc.innerText = total;
+  previousSc.innerText = "";
+}; // Add Number button click functionality 
 
 
 numbersBtns.forEach(function (number) {
@@ -103,35 +110,5 @@ console.log(cancelButton); // Delete last number
 // currentSc.innerText = currentSc.innerText.toString().slice(0, -1)
 // add All Equals button click functionality
 
-totalButton.addEventListener("click", function () {
-  console.log(totalButton);
-  var answer;
-  var enteredNum = parseFloat(previousSc.innerText);
-  var newNum = parseFloat(currentSc.innerText);
-
-  switch (operationsBtns.innerText) {
-    case "+":
-      answer = enteredNum + newNum;
-      break;
-
-    case "-":
-      answer = enteredNum - newNum;
-      break;
-
-    case "*":
-      answer = enteredNum * newNum;
-      break;
-
-    case "÷":
-      answer = enteredNum / newNum;
-
-    default:
-      break;
-  }
-}); // add number to display
-// numbersButton.forEach((number) => {
-//     number.addEventListener("click", (event) => {
-//         event.target.value = number.toString();
-//         console.log(number);
-//         })
-//     });
+totalButton.addEventListener("click", answer);
+console.log(totalButton);

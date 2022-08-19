@@ -1,38 +1,38 @@
-const numbers = document.getElementsByClassName("calculator__buttons--number");
-console.log(numbers);
+// const numbers = document.getElementsByClassName("calculator__buttons--number");
+// console.log(numbers);
 
-const operations = document.getElementsByClassName("calculator__buttons--operation");
-console.log(operations);
+// const operations = document.getElementsByClassName("calculator__buttons--operation");
+// console.log(operations);
 
-const currentSc = document.getElementById("screenCurr");
-console.log(currentSc);
+// const currentSc = document.getElementById("screenCurr");
+// console.log(currentSc);
 
-const previousSc = document.getElementById("screenPrev");
-console.log(previousSc);
+// const previousSc = document.getElementById("screenPrev");
+// console.log(previousSc);
 
-const clear = document.getElementById("AC");
-console.log(clear);
+// const clear = document.getElementById("AC");
+// console.log(clear);
 
-const cancel = document.getElementById("delete");
-console.log(cancel);
+// const cancel = document.getElementById("delete");
+// console.log(cancel);
 
-const total = document.getElementById("equals");
-console.log(total);
+// const total = document.getElementById("equals");
+// console.log(total);
 
 
-clear.onclick = () => {
-    previousSc = "";
-    currentSc = "";
-    operations = "";
-} 
+// clear.onclick = () => {
+//     previousSc = "";
+//     currentSc = "";
+//     operations = "";
+// } 
 
-updateScreen () {
-    currentSc.innerText = currentSc;
-}
+// updateScreen () {
+//     currentSc.innerText = currentSc;
+// }
 
-appendNumber (number) {
-    currentSc = number;
-}
+// appendNumber (number) {
+//     currentSc = number;
+// }
 
 // selectOperation (operation) {
 
@@ -42,12 +42,12 @@ appendNumber (number) {
 
 
 
-numbers.forEach((numberButton) => {
-    numberButton.addEventListener("click", () => {
-        currentSc.appendNumber(numberButton)
+// numbers.forEach((numberButton) => {
+//     numberButton.addEventListener("click", () => {
+//         currentSc.appendNumber(numberButton)
 
-    });
-  });
+//     });
+//   });
 
 
 
@@ -55,6 +55,57 @@ numbers.forEach((numberButton) => {
 // const typeNumber = numbers.target 
 
 
+// // getElementsByTagName
+// const todoHeading = document.getElementsByTagName("h1")[0];
+// todoHeading.innerHTML += " Today!";
+// console.log(todoHeading);
+
+// // getElementsByClassName
+
+
+// // getElementById
+// const addButton = document.getElementById("add-button");
+// console.log(addButton);
+
+// // querySelector
+// const inputBox = document.querySelector("input");
+// console.log(inputBox);
+
+// const list = document.querySelector("ul");
+// console.log(list);
+
+// // querySelectorAll
+// const items = document.querySelectorAll("li");
+// console.log(items);
+
+
+// numbers.forEach((numberButton) => {
+//      numberButton.addEventListener("click", handleNumberPress);
+//    });
+
+
+// set previous number variable equal to zero. 
+
+
+
+// let previousNumb = (" ");
+// console.log(previousNumb);
+
+
+
+// const handleNumberPress = () => {
+//     previousNumb += numbers     
+//     console.log(handleNumberPress);
+//     }
+
+
+
+//     numbers.forEach((number) => {
+//         number.addEventListener("click", handleNumberPress);
+//     });
+
+
+// functions of My calculator:
 
 
 

@@ -1,63 +1,6 @@
-// // getElementsByTagName
-// const todoHeading = document.getElementsByTagName("h1")[0];
-// todoHeading.innerHTML += " Today!";
-// console.log(todoHeading);
-
-// // getElementsByClassName
-
-
-// // getElementById
-// const addButton = document.getElementById("add-button");
-// console.log(addButton);
-
-// // querySelector
-// const inputBox = document.querySelector("input");
-// console.log(inputBox);
-
-// const list = document.querySelector("ul");
-// console.log(list);
-
-// // querySelectorAll
-// const items = document.querySelectorAll("li");
-// console.log(items);
-
-
-// numbers.forEach((numberButton) => {
-//      numberButton.addEventListener("click", handleNumberPress);
-//    });
-
-
-// set previous number variable equal to zero. 
-
-
-
-// let previousNumb = (" ");
-// console.log(previousNumb);
-
-
-
-// const handleNumberPress = () => {
-//     previousNumb += numbers     
-//     console.log(handleNumberPress);
-//     }
-
-
-
-//     numbers.forEach((number) => {
-//         number.addEventListener("click", handleNumberPress);
-//     });
-
-
-// functions of My calculator:
-
-
-
-
-
-
 
 // ALL HTML elements is variables:
-let numbersButton = document.getElementsByClassName("calculator__buttons--number");
+const  numbersButton = document.getElementsByClassName("calculator__buttons--number");
 console.log(numbersButton);
 
 const operationsButton = document.getElementsByClassName("calculator__buttons--operation");
@@ -78,6 +21,7 @@ console.log(cancelButton);
 const totalButton = document.getElementById("equals");
 console.log(totalButton);
 
+
 // Create arrays from HTML collections
 const numbersBtns = Array.from(numbersButton);
 console.log(numbersBtns);
@@ -87,7 +31,6 @@ console.log(operationsBtns);
 
 
 // Append number function
-
 
 // Handle Operation function
 
@@ -102,40 +45,39 @@ clear = () => {
 // Delete item on display function
 back = () => {
     currentSc.innerText = currentSc.innerText.toString().slice(0, -1)
-
 }
 
 // Final total function 
-
-let answer = () => {
+answer = () => {
+    let total 
     const enteredNum = parseFloat(previousSc.innerText) 
     const newNum = parseFloat(currentSc.innerText)
 
-    switch (operationsBtns.innerText) {
+    switch (operation.innerText) {
         case "+":
-            answer = enteredNum + newNum
+            total = (enteredNum + newNum)
             break;
         case "-":
-            answer = enteredNum - newNum
+            total = enteredNum - newNum
             break;
         case "*":
-            answer = enteredNum * newNum
+            total = enteredNum * newNum
             break;
         case "÷":
-            answer = enteredNum / newNum
+            total = enteredNum / newNum
             break;
-
-
-
-
+        case "%":
+            total = enteredNum % newNum
+            break;
+        case "√": 
+            total = Math.sqrt(enteredNum)
         default:
             break;
     }
-
-    currentSc.innerText = answer;
+    currentSc.innerText = total
+    previousSc.innerText = "";
     
 }
-
 
 
 // Add Number button click functionality 
@@ -163,9 +105,7 @@ operationsBtns.forEach((operation) => {
         previousSc.innerText = calculation;
         currentSc.innerText = ""
     })
-
 })    
-
 
 
 // add All Clear button click functionality
@@ -176,7 +116,6 @@ clearButton.addEventListener("click", (clear))
     // previousSc.innerHTML = ""
 
 
-
 // add All Delete button click functionality
 cancelButton.addEventListener("click", (back))
     console.log(cancelButton);
@@ -184,22 +123,6 @@ cancelButton.addEventListener("click", (back))
     // currentSc.innerText = currentSc.innerText.toString().slice(0, -1)
 
 
-
 // add All Equals button click functionality
 totalButton.addEventListener("click", (answer))
     console.log(totalButton);
-
-
-
-
-
-
-
-// add number to display
-
-// numbersButton.forEach((number) => {
-//     number.addEventListener("click", (event) => {
-//         event.target.value = number.toString();
-//         console.log(number);
-//         })
-//     });
