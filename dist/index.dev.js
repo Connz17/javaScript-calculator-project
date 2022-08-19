@@ -58,7 +58,11 @@ clear = function clear() {
   previousSc.innerText = "";
 }; // Update display function
 // Delete item on display function
-// Final total function 
+
+
+back = function back() {
+  currentSc.innerText = currentSc.innerText.toString().slice(0, -1);
+}; // Final total function 
 // Add Number button click functionality 
 
 
@@ -79,7 +83,7 @@ operationsBtns.forEach(function (operation) {
 
     if (previousSc.innerText !== "") {
       answer();
-    } // operation = operation.innerText
+    } // Shift number to top section and add operation sign
 
 
     var calculation = currentSc.innerText + " " + operation.innerText;
@@ -94,9 +98,10 @@ console.log(clearButton); // Clear the display
 // previousSc.innerHTML = ""
 // add All Delete button click functionality
 
-cancelButton.addEventListener("click", function () {
-  console.log(cancelButton);
-}); // add All Equals button click functionality
+cancelButton.addEventListener("click", back);
+console.log(cancelButton); // Delete last number
+// currentSc.innerText = currentSc.innerText.toString().slice(0, -1)
+// add All Equals button click functionality
 
 totalButton.addEventListener("click", function () {
   console.log(totalButton);

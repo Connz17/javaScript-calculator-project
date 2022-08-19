@@ -100,6 +100,10 @@ clear = () => {
 // Update display function
 
 // Delete item on display function
+back = () => {
+    currentSc.innerText = currentSc.innerText.toString().slice(0, -1)
+
+}
 
 // Final total function 
 
@@ -127,11 +131,10 @@ operationsBtns.forEach((operation) => {
         if (previousSc.innerText !== "") {
             answer()
         }
-        // operation = operation.innerText
+// Shift number to top section and add operation sign
         const calculation = currentSc.innerText + " " + operation.innerText
         previousSc.innerText = calculation;
         currentSc.innerText = ""
-
     })
 
 })    
@@ -148,9 +151,11 @@ clearButton.addEventListener("click", (clear))
 
 
 // add All Delete button click functionality
-cancelButton.addEventListener("click", () => {
+cancelButton.addEventListener("click", (back))
     console.log(cancelButton);
-})
+// Delete last number
+    // currentSc.innerText = currentSc.innerText.toString().slice(0, -1)
+
 
 
 // add All Equals button click functionality
