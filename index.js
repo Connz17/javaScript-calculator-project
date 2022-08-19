@@ -113,6 +113,7 @@ numbersBtns.forEach((number) => {
         console.log(number);
         number.toString = number.innerText;
         const bigNum = number.toString
+        if (number.innerText === "." && currentSc.innerText.includes(".")) return
         currentSc.innerText = currentSc.innerText + bigNum
         })    
 })

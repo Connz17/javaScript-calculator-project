@@ -67,7 +67,8 @@ numbersBtns.forEach(function (number) {
     console.log(number);
     number.toString = number.innerText;
     var bigNum = number.toString;
-    currentSc.innerText = currentSc.innerText + bigNum; // currentSc.innerText = currentSc.append(number.toString); 
+    if (number.innerText === "." && currentSc.innerText.includes(".")) return;
+    currentSc.innerText = currentSc.innerText + bigNum;
   });
 }); // Add Operation button click functionality 
 
