@@ -20,28 +20,74 @@
 //      numberButton.addEventListener("click", handleNumberPress);
 //    });
 // set previous number variable equal to zero. 
-var numbers = document.getElementsByClassName("calculator__buttons--number");
-console.log(numbers);
-var operation = document.getElementsByClassName("calculator__buttons--operation");
-console.log(operation);
+// let previousNumb = (" ");
+// console.log(previousNumb);
+// const handleNumberPress = () => {
+//     previousNumb += numbers     
+//     console.log(handleNumberPress);
+//     }
+//     numbers.forEach((number) => {
+//         number.addEventListener("click", handleNumberPress);
+//     });
+// functions of My calculator:
+// ALL HTML elements is variables:
+var numbersButton = document.getElementsByClassName("calculator__buttons--number");
+console.log(numbersButton);
+var operationsButton = document.getElementsByClassName("calculator__buttons--operation");
+console.log(operationsButton);
 var currentSc = document.getElementById("screenCurr");
 console.log(currentSc);
 var previousSc = document.getElementById("screenPrev");
 console.log(previousSc);
-var clear = document.getElementById("AC");
-console.log(clear);
-var cancel = document.getElementById("delete");
-console.log(cancel);
-var total = document.getElementById("equals");
-console.log(total);
-var previousNumb = " ";
-console.log(previousNumb);
+var clearButton = document.getElementById("AC");
+console.log(clearButton);
+var cancelButton = document.getElementById("delete");
+console.log(cancelButton);
+var totalButton = document.getElementById("equals");
+console.log(totalButton); // Create arrays from HTML collections
 
-var handleNumberPress = function handleNumberPress() {
-  previousNumb += numbers;
-  console.log(handleNumberPress);
-};
+var numbersBtns = Array.from(numbersButton);
+console.log(numbersBtns);
+var operationsBtns = Array.from(operationsButton);
+console.log(operationsBtns); // Append number function
 
-numbers.forEach(function (number) {
-  number.addEventListener("click", handleNumberPress);
-});
+appendNumber = function appendNumber() {
+  currentSc.innerHTML = currentSc.toString + number.toString;
+}; // Handle Operation function
+// Clear Display function
+// Update display function
+// Delete item on display function
+// Final total function 
+// Add Number button click functionality 
+
+
+numbersBtns.forEach(function (number) {
+  number.addEventListener("click", function () {
+    console.log(number);
+    currentSc.innerHTML = number.innerText;
+  });
+}); // Add Operation button click functionality 
+
+operationsBtns.forEach(function (operation) {
+  operation.addEventListener("click", function () {
+    console.log(operation);
+  });
+}); // add All Clear button click functionality
+
+clearButton.addEventListener("click", function () {
+  console.log(clearButton);
+}); // add All Delete button click functionality
+
+cancelButton.addEventListener("click", function () {
+  console.log(cancelButton);
+}); // add All Equals button click functionality
+
+totalButton.addEventListener("click", function () {
+  console.log(totalButton);
+}); // add number to display
+// numbersButton.forEach((number) => {
+//     number.addEventListener("click", (event) => {
+//         event.target.value = number.toString();
+//         console.log(number);
+//         })
+//     });

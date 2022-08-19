@@ -29,11 +29,39 @@
 
 // set previous number variable equal to zero. 
 
-const numbers = document.getElementsByClassName("calculator__buttons--number");
-console.log(numbers);
 
-const operation = document.getElementsByClassName("calculator__buttons--operation");
-console.log(operation);
+
+// let previousNumb = (" ");
+// console.log(previousNumb);
+
+
+
+// const handleNumberPress = () => {
+//     previousNumb += numbers     
+//     console.log(handleNumberPress);
+//     }
+
+
+
+//     numbers.forEach((number) => {
+//         number.addEventListener("click", handleNumberPress);
+//     });
+
+
+// functions of My calculator:
+
+
+
+
+
+
+
+// ALL HTML elements is variables:
+const numbersButton = document.getElementsByClassName("calculator__buttons--number");
+console.log(numbersButton);
+
+const operationsButton = document.getElementsByClassName("calculator__buttons--operation");
+console.log(operationsButton);
 
 const currentSc = document.getElementById("screenCurr");
 console.log(currentSc);
@@ -41,30 +69,89 @@ console.log(currentSc);
 const previousSc = document.getElementById("screenPrev");
 console.log(previousSc);
 
-const clear = document.getElementById("AC");
-console.log(clear);
+const clearButton = document.getElementById("AC");
+console.log(clearButton);
 
-const cancel = document.getElementById("delete");
-console.log(cancel);
+const cancelButton = document.getElementById("delete");
+console.log(cancelButton);
 
-const total = document.getElementById("equals");
-console.log(total);
+const totalButton = document.getElementById("equals");
+console.log(totalButton);
 
+// Create arrays from HTML collections
+const numbersBtns = Array.from(numbersButton);
+console.log(numbersBtns);
 
-let previousNumb = (" ");
-console.log(previousNumb);
-
-
-
-const handleNumberPress = () => {
-    previousNumb += numbers     
-    console.log(handleNumberPress);
-    }
+const operationsBtns = Array.from(operationsButton);
+console.log(operationsBtns);
 
 
+// Append number function
+appendNumber = () => {
+currentSc.innerHTML = currentSc.toString + number.toString
+}
 
-    numbers.forEach((number) => {
-        number.addEventListener("click", handleNumberPress);
-    });
+// Handle Operation function
+
+// Clear Display function
+
+// Update display function
+
+// Delete item on display function
+
+// Final total function 
 
 
+
+
+
+// Add Number button click functionality 
+numbersBtns.forEach((number) => {
+    number.addEventListener("click", () => {
+        console.log(number);
+        
+        currentSc.innerHTML = number.innerText;
+
+        })    
+})
+
+
+// Add Operation button click functionality 
+operationsBtns.forEach((operation) => {
+    operation.addEventListener("click", () => {
+        console.log(operation);
+        })    
+})
+
+
+// add All Clear button click functionality
+clearButton.addEventListener("click", () => {
+    console.log(clearButton);
+})
+
+
+// add All Delete button click functionality
+cancelButton.addEventListener("click", () => {
+    console.log(cancelButton);
+})
+
+
+// add All Equals button click functionality
+totalButton.addEventListener("click", () => {
+    console.log(totalButton);
+})
+
+
+
+
+
+
+
+// add number to display
+
+// numbersButton.forEach((number) => {
+//     number.addEventListener("click", (event) => {
+//         event.target.value = number.toString();
+//         console.log(number);
+//         })
+//     });
