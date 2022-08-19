@@ -123,8 +123,19 @@ numbersBtns.forEach((number) => {
 operationsBtns.forEach((operation) => {
     operation.addEventListener("click", () => {
         console.log(operation);
-        })    
-})
+        if (currentSc.innerText === "") return;
+        if (previousSc.innerText !== "") {
+            answer()
+        }
+        // operation = operation.innerText
+        const calculation = currentSc.innerText + " " + operation.innerText
+        previousSc.innerText = calculation;
+        currentSc.innerText = ""
+
+    })
+
+})    
+
 
 
 // add All Clear button click functionality
