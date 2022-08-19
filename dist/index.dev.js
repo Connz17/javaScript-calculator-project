@@ -50,6 +50,11 @@ var numbersBtns = Array.from(numbersButton);
 console.log(numbersBtns);
 var operationsBtns = Array.from(operationsButton);
 console.log(operationsBtns); // Append number function
+// handleNumPress = () => {
+//     number.toString = number.innerText;
+//     const bigNum = number.toString
+//     currentSc.innerText = currentSc.innerText + bigNum
+// }
 // Handle Operation function
 // Clear Display function
 
@@ -57,24 +62,34 @@ clear = function clear() {
   currentSc.innerText = "";
   previousSc.innerText = "";
 }; // Update display function
-// Delete item on display function
+
+
+shift = function shift() {
+  if (currentSc.innerText = !"") {
+    var setNum = currentSc.innerText;
+    previousSc.innerText = parseFloat(setNum);
+    currentSc.innerText = "";
+  }
+}; // Delete item on display function
 // Final total function 
 // Add Number button click functionality 
 
 
 numbersBtns.forEach(function (number) {
   number.addEventListener("click", function () {
-    console.log(number);
+    console.log(number); // Append and add numbers to display
+
     number.toString = number.innerText;
     var bigNum = number.toString;
-    currentSc.innerText = currentSc.innerText + bigNum; // currentSc.innerText = currentSc.append(number.toString); 
+    workingNum = currentSc.innerText + bigNum;
+    if (number.innerText === "." && currentSc.innerText.includes(".")) return;
+    currentSc.innerText = workingNum;
   });
 }); // Add Operation button click functionality 
 
 operationsBtns.forEach(function (operation) {
-  operation.addEventListener("click", function () {
-    console.log(operation);
-  });
+  operation.addEventListener("click", shift);
+  console.log(operation); // Append and add numbers to display
 }); // add All Clear button click functionality
 
 clearButton.addEventListener("click", clear);
