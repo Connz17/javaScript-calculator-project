@@ -105,6 +105,29 @@ console.log(cancelButton); // Delete last number
 
 totalButton.addEventListener("click", function () {
   console.log(totalButton);
+  var answer;
+  var enteredNum = parseFloat(previousSc.innerText);
+  var newNum = parseFloat(currentSc.innerText);
+
+  switch (operationsBtns.innerText) {
+    case "+":
+      answer = enteredNum + newNum;
+      break;
+
+    case "-":
+      answer = enteredNum - newNum;
+      break;
+
+    case "*":
+      answer = enteredNum * newNum;
+      break;
+
+    case "÷":
+      answer = enteredNum / newNum;
+
+    default:
+      break;
+  }
 }); // add number to display
 // numbersButton.forEach((number) => {
 //     number.addEventListener("click", (event) => {

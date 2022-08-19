@@ -107,7 +107,34 @@ back = () => {
 
 // Final total function 
 
+let answer = () => {
+    const enteredNum = parseFloat(previousSc.innerText) 
+    const newNum = parseFloat(currentSc.innerText)
 
+    switch (operationsBtns.innerText) {
+        case "+":
+            answer = enteredNum + newNum
+            break;
+        case "-":
+            answer = enteredNum - newNum
+            break;
+        case "*":
+            answer = enteredNum * newNum
+            break;
+        case "÷":
+            answer = enteredNum / newNum
+            break;
+
+
+
+
+        default:
+            break;
+    }
+
+    currentSc.innerText = answer;
+    
+}
 
 
 
@@ -159,9 +186,8 @@ cancelButton.addEventListener("click", (back))
 
 
 // add All Equals button click functionality
-totalButton.addEventListener("click", () => {
+totalButton.addEventListener("click", (answer))
     console.log(totalButton);
-})
 
 
 
