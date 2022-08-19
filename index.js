@@ -57,7 +57,7 @@
 
 
 // ALL HTML elements is variables:
-const numbersButton = document.getElementsByClassName("calculator__buttons--number");
+let numbersButton = document.getElementsByClassName("calculator__buttons--number");
 console.log(numbersButton);
 
 const operationsButton = document.getElementsByClassName("calculator__buttons--operation");
@@ -87,13 +87,15 @@ console.log(operationsBtns);
 
 
 // Append number function
-appendNumber = () => {
-currentSc.innerHTML = currentSc.toString + number.toString
-}
+
 
 // Handle Operation function
 
 // Clear Display function
+clear = () => {
+    currentSc.innerText = ""
+    previousSc.innerText = ""
+} 
 
 // Update display function
 
@@ -109,9 +111,9 @@ currentSc.innerHTML = currentSc.toString + number.toString
 numbersBtns.forEach((number) => {
     number.addEventListener("click", () => {
         console.log(number);
-        
-        currentSc.innerHTML = number.innerText;
-
+        number.toString = number.innerText;
+        const bigNum = number.toString
+        currentSc.innerText = currentSc.innerText + bigNum
         })    
 })
 
@@ -125,9 +127,12 @@ operationsBtns.forEach((operation) => {
 
 
 // add All Clear button click functionality
-clearButton.addEventListener("click", () => {
+clearButton.addEventListener("click", (clear))
     console.log(clearButton);
-})
+// Clear the display
+    // currentSc.innerHTML = ""
+    // previousSc.innerHTML = ""
+
 
 
 // add All Delete button click functionality

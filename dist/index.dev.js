@@ -50,12 +50,13 @@ var numbersBtns = Array.from(numbersButton);
 console.log(numbersBtns);
 var operationsBtns = Array.from(operationsButton);
 console.log(operationsBtns); // Append number function
-
-appendNumber = function appendNumber() {
-  currentSc.innerHTML = currentSc.toString + number.toString;
-}; // Handle Operation function
+// Handle Operation function
 // Clear Display function
-// Update display function
+
+clear = function clear() {
+  currentSc.innerText = "";
+  previousSc.innerText = "";
+}; // Update display function
 // Delete item on display function
 // Final total function 
 // Add Number button click functionality 
@@ -64,7 +65,9 @@ appendNumber = function appendNumber() {
 numbersBtns.forEach(function (number) {
   number.addEventListener("click", function () {
     console.log(number);
-    currentSc.innerHTML = number.innerText;
+    number.toString = number.innerText;
+    var bigNum = number.toString;
+    currentSc.innerText = currentSc.innerText + bigNum; // currentSc.innerText = currentSc.append(number.toString); 
   });
 }); // Add Operation button click functionality 
 
@@ -74,9 +77,11 @@ operationsBtns.forEach(function (operation) {
   });
 }); // add All Clear button click functionality
 
-clearButton.addEventListener("click", function () {
-  console.log(clearButton);
-}); // add All Delete button click functionality
+clearButton.addEventListener("click", clear);
+console.log(clearButton); // Clear the display
+// currentSc.innerHTML = ""
+// previousSc.innerHTML = ""
+// add All Delete button click functionality
 
 cancelButton.addEventListener("click", function () {
   console.log(cancelButton);
