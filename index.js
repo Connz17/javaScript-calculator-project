@@ -87,11 +87,6 @@ console.log(operationsBtns);
 
 
 // Append number function
-// handleNumPress = () => {
-//     number.toString = number.innerText;
-//     const bigNum = number.toString
-//     currentSc.innerText = currentSc.innerText + bigNum
-// }
 
 
 // Handle Operation function
@@ -103,13 +98,6 @@ clear = () => {
 } 
 
 // Update display function
-shift = () => {
-if (currentSc.innerText = !"") {
-    const setNum = currentSc.innerText 
-    previousSc.innerText = parseFloat(setNum)
-    currentSc.innerText = ""
-}
-}
 
 // Delete item on display function
 
@@ -123,25 +111,18 @@ if (currentSc.innerText = !"") {
 numbersBtns.forEach((number) => {
     number.addEventListener("click", () => {
         console.log(number);
-// Append and add numbers to display
         number.toString = number.innerText;
         const bigNum = number.toString
-        workingNum = currentSc.innerText + bigNum
-        if (number.innerText === "." && currentSc.innerText.includes(".")) return
-        currentSc.innerText = workingNum
-        
-        
-        
+        currentSc.innerText = currentSc.innerText + bigNum
         })    
 })
 
 
 // Add Operation button click functionality 
 operationsBtns.forEach((operation) => {
-    operation.addEventListener("click", (shift))
+    operation.addEventListener("click", () => {
         console.log(operation);
-// Append and add numbers to display
-    
+        })    
 })
 
 
