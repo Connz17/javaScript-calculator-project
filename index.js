@@ -42,6 +42,7 @@ clear = () => {
 
 // Update display function
 
+
 // Delete item on display function
 back = () => {
     currentSc.innerText = currentSc.innerText.toString().slice(0, -1)
@@ -49,35 +50,47 @@ back = () => {
 
 // Final total function 
 answer = () => {
-    let total 
-    const enteredNum = parseFloat(previousSc.innerText) 
-    const newNum = parseFloat(currentSc.innerText)
 
-    switch (operation.innerText) {
-        case "+":
-            total = (enteredNum + newNum)
-            break;
+    let sumTotal 
+    const enteredNum = parseFloat(previousSc.innerText) 
+    const newNum = parseFloat(currentSc.innerText)    
+    if (isNaN(enteredNum) || isNaN(newNum)) return
+    
+    operationsBtns.forEach((sign) => {
+        switch (sign.innerText) {
         case "-":
-            total = enteredNum - newNum
+            sumTotal = enteredNum - newNum
+            console.log("minus"); 
             break;
-        case "*":
-            total = enteredNum * newNum
+        case "+":
+            sumTotal = enteredNum + newNum
+            console.log("plus");
+            break;
+        case "X":
+            sumTotal = enteredNum * newNum
+            console.log("times"); 
             break;
         case "÷":
-            total = enteredNum / newNum
+            sumTotal = enteredNum / newNum
+            console.log("divide"); 
             break;
         case "%":
-            total = enteredNum % newNum
+            sumTotal = enteredNum % newNum
+            console.log("percent"); 
             break;
         case "√": 
-            total = Math.sqrt(enteredNum)
-        default:
+            sumTotal = Math.sqrt(enteredNum)
+            console.log("square"); 
             break;
-    }
-    currentSc.innerText = total
+        default:console.log("no computation happening");
+            return;
+    }    
+    })
+    currentSc.innerText = sumTotal
     previousSc.innerText = "";
     
 }
+
 
 
 // Add Number button click functionality 
@@ -104,6 +117,7 @@ operationsBtns.forEach((operation) => {
         const calculation = currentSc.innerText + " " + operation.innerText
         previousSc.innerText = calculation;
         currentSc.innerText = ""
+        
     })
 })    
 

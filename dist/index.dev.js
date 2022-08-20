@@ -36,39 +36,48 @@ back = function back() {
 
 
 answer = function answer() {
-  var total;
+  var sumTotal;
   var enteredNum = parseFloat(previousSc.innerText);
   var newNum = parseFloat(currentSc.innerText);
+  if (isNaN(enteredNum) || isNaN(newNum)) return;
+  operationsBtns.forEach(function (sign) {
+    switch (sign.innerText) {
+      case "-":
+        sumTotal = enteredNum - newNum;
+        console.log("minus");
+        break;
 
-  switch (operation.innerText) {
-    case "+":
-      total = enteredNum + newNum;
-      break;
+      case "+":
+        sumTotal = enteredNum + newNum;
+        console.log("plus");
+        break;
 
-    case "-":
-      total = enteredNum - newNum;
-      break;
+      case "X":
+        sumTotal = enteredNum * newNum;
+        console.log("times");
+        break;
 
-    case "*":
-      total = enteredNum * newNum;
-      break;
+      case "÷":
+        sumTotal = enteredNum / newNum;
+        console.log("divide");
+        break;
 
-    case "÷":
-      total = enteredNum / newNum;
-      break;
+      case "%":
+        sumTotal = enteredNum % newNum;
+        console.log("percent");
+        break;
 
-    case "%":
-      total = enteredNum % newNum;
-      break;
+      case "√":
+        sumTotal = Math.sqrt(enteredNum);
+        console.log("square");
+        break;
 
-    case "√":
-      total = Math.sqrt(enteredNum);
-
-    default:
-      break;
-  }
-
-  currentSc.innerText = total;
+      default:
+        console.log("no computation happening");
+        return;
+    }
+  });
+  currentSc.innerText = sumTotal;
   previousSc.innerText = "";
 }; // Add Number button click functionality 
 
