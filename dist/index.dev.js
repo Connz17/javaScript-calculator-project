@@ -14,69 +14,73 @@ console.log(clearButton);
 var cancelButton = document.getElementById("delete");
 console.log(cancelButton);
 var totalButton = document.getElementById("equals");
-console.log(totalButton); // Create arrays from HTML collections
+console.log(totalButton);
+var sqRoot = document.getElementById("root");
+console.log(sqRoot);
+var pcent = document.getElementById("percentage");
+console.log(pcent);
+var divide = document.getElementById("divide");
+console.log(divide);
+var times = document.getElementById("multiply");
+console.log(times);
+var minus = document.getElementById("takeAway");
+console.log(minus);
+var addition = document.getElementById("plus");
+console.log(addition); // Create arrays from HTML collections
 
 var numbersBtns = Array.from(numbersButton);
 console.log(numbersBtns);
 var operationsBtns = Array.from(operationsButton);
-console.log(operationsBtns); // Append number function
+console.log(operationsBtns);
+sign = operationsBtns.innerText;
+console.log(sign); // Append number function
 // Handle Operation function
 // Clear Display function
 
-clear = function clear() {
+var clear = function clear() {
   currentSc.innerText = "";
   previousSc.innerText = "";
 }; // Update display function
 // Delete item on display function
 
 
-back = function back() {
+var back = function back() {
   currentSc.innerText = currentSc.innerText.toString().slice(0, -1);
 }; // Final total function 
 
 
-answer = function answer() {
+var answer = function answer() {
   var sumTotal;
   var enteredNum = parseFloat(previousSc.innerText);
   var newNum = parseFloat(currentSc.innerText);
   if (isNaN(enteredNum) || isNaN(newNum)) return;
-  operationsBtns.forEach(function (sign) {
-    switch (sign.innerText) {
-      case "-":
-        sumTotal = enteredNum - newNum;
-        console.log("minus");
-        break;
+  var sings = [sqRoot.innerText, pcent.innerText, divide.innerText, times.innerText, minus.innerText, addition.innerText];
+  console.log(sings);
 
-      case "+":
-        sumTotal = enteredNum + newNum;
-        console.log("plus");
-        break;
-
-      case "X":
-        sumTotal = enteredNum * newNum;
-        console.log("times");
-        break;
-
-      case "÷":
-        sumTotal = enteredNum / newNum;
-        console.log("divide");
-        break;
-
-      case "%":
-        sumTotal = enteredNum % newNum;
-        console.log("percent");
-        break;
-
-      case "√":
-        sumTotal = Math.sqrt(enteredNum);
-        console.log("square");
-        break;
-
-      default:
-        console.log("no computation happening");
-        return;
+  for (var index = 0; index < sings.length; index++) {
+    if (sings.includes("√")) {
+      sumTotal = Math.sqrt(enteredNum);
+      console.log("square");
+    } else if (sings.includes("÷")) {
+      sumTotal = enteredNum / newNum;
+      console.log("divide");
+    } else if (sings.includes("X")) {
+      sumTotal = enteredNum * newNum;
+      console.log("times");
+    } else if (sings.includes("-")) {
+      sumTotal = enteredNum - newNum;
+      console.log("minus");
+    } else if (sings.includes["+"]) {
+      sumTotal = enteredNum + newNum;
+      console.log("plus");
+    } else if (sings.includes["%"]) {
+      sumTotal = enteredNum % newNum;
+      console.log("percent");
+    } else {
+      console.log("no computation happening");
     }
-  });
+  }
+
   currentSc.innerText = sumTotal;
   previousSc.innerText = "";
 }; // Add Number button click functionality 
@@ -119,5 +123,8 @@ console.log(cancelButton); // Delete last number
 // currentSc.innerText = currentSc.innerText.toString().slice(0, -1)
 // add All Equals button click functionality
 
-totalButton.addEventListener("click", answer);
-console.log(totalButton);
+totalButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  answer();
+  console.log(totalButton);
+});

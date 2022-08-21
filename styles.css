@@ -22,7 +22,7 @@ main {
   justify-items: center;
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
-  grid-template-rows: 4fr 2fr 2fr 2fr 2fr 2fr;
+  grid-template-rows: 6fr 2fr 2fr 2fr 2fr 2fr;
   gap: 10px;
   grid-template-areas: "calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen calculator__screen" ". AC root percentage divide ." ". seven eight nine multiply ." ". four five six takeAway ." ". one two three plus ." ". nil decimal delete equals .";
   border-radius: 20px;
@@ -38,15 +38,16 @@ main {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
+  word-break: break-all;
   background-color: azure;
   border-radius: 15px;
 }
 .calculator__screen #screenPrev {
-  max-width: 100%;
+  max-width: 95%;
   height: 50%;
 }
 .calculator__screen #screenCurr {
-  max-width: 100%;
+  max-width: 95%;
   height: 50%;
 }
 .calculator__buttons {
