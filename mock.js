@@ -90,6 +90,8 @@ console.log(test);
 const clear = () => {
     currentSc.innerText = ""
     previousSc.innerText = ""
+    previousSc = ""
+    currentSc = ""
 } 
 
 // Update display function
@@ -178,6 +180,7 @@ add.addEventListener("click", () => {
     sumTotal = enteredNum + newNum
     currentSc.innerText = sumTotal
     previousSc.innerText = "";
+    return
     })    
 });
 

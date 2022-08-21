@@ -40,6 +40,8 @@ console.log(sign); // Append number function
 var clear = function clear() {
   currentSc.innerText = "";
   previousSc.innerText = "";
+  previousSc.innerHTML = "";
+  currentSc.innerHTML = "";
 }; // Update display function
 // Delete item on display function
 
@@ -83,6 +85,7 @@ var answer = function answer() {
 
   currentSc.innerText = sumTotal;
   previousSc.innerText = "";
+  return;
 }; // Add Number button click functionality 
 
 
@@ -96,19 +99,159 @@ numbersBtns.forEach(function (number) {
   });
 }); // Add Operation button click functionality 
 
-operationsBtns.forEach(function (operation) {
-  operation.addEventListener("click", function () {
-    console.log(operation);
-    if (currentSc.innerText === "") return;
+addition.addEventListener("click", function () {
+  console.log(addition);
+  if (currentSc.innerText === "") return;
 
-    if (previousSc.innerText !== "") {
-      answer();
-    } // Shift number to top section and add operation sign
+  if (previousSc.innerText !== "") {
+    answer();
+  } // Shift number to top section and add operation sign
 
 
-    var calculation = currentSc.innerText + " " + operation.innerText;
-    previousSc.innerText = calculation;
-    currentSc.innerText = "";
+  var calculation = currentSc.innerText + " " + addition.innerText;
+  previousSc.innerText = calculation;
+  currentSc.innerText = ""; // start computation 
+
+  totalButton.addEventListener("click", function () {
+    console.log(totalButton);
+    var sumTotal;
+    var enteredNum = parseFloat(previousSc.innerText);
+    var newNum = parseFloat(currentSc.innerText);
+    if (isNaN(enteredNum) || isNaN(newNum)) return;
+    sumTotal = enteredNum + newNum;
+    currentSc.innerText = sumTotal;
+    previousSc.innerText = "";
+    return;
+  });
+  return;
+}); // subtraction Operation button click functionality 
+
+minus.addEventListener("click", function () {
+  console.log(minus);
+  if (currentSc.innerText === "") return;
+
+  if (previousSc.innerText !== "") {
+    answer();
+  } // Shift number to top section and add operation sign
+
+
+  var calculation = currentSc.innerText + " " + minus.innerText;
+  previousSc.innerText = calculation;
+  currentSc.innerText = ""; // start computation 
+
+  totalButton.addEventListener("click", function () {
+    preventDefault();
+    console.log(totalButton);
+    var sumTotal;
+    var enteredNum = parseFloat(previousSc.innerText);
+    var newNum = parseFloat(currentSc.innerText);
+    if (isNaN(enteredNum) || isNaN(newNum)) return;
+    sumTotal = enteredNum - newNum;
+    currentSc.innerText = sumTotal;
+    previousSc.innerText = "";
+  });
+}); // Multiplication Operation button click functionality 
+
+times.addEventListener("click", function () {
+  console.log(times);
+  if (currentSc.innerText === "") return;
+
+  if (previousSc.innerText !== "") {
+    answer();
+  } // Shift number to top section and add operation sign
+
+
+  var calculation = currentSc.innerText + " " + times.innerText;
+  previousSc.innerText = calculation;
+  currentSc.innerText = ""; // start computation 
+
+  totalButton.addEventListener("click", function () {
+    preventDefault();
+    console.log(totalButton);
+    var sumTotal;
+    var enteredNum = parseFloat(previousSc.innerText);
+    var newNum = parseFloat(currentSc.innerText);
+    if (isNaN(enteredNum) || isNaN(newNum)) return;
+    sumTotal = enteredNum * newNum;
+    currentSc.innerText = sumTotal;
+    previousSc.innerText = "";
+  });
+}); // Division Operation button click functionality 
+
+divide.addEventListener("click", function () {
+  console.log(divide);
+  if (currentSc.innerText === "") return;
+
+  if (previousSc.innerText !== "") {
+    answer();
+  } // Shift number to top section and add operation sign
+
+
+  var calculation = currentSc.innerText + " " + divide.innerText;
+  previousSc.innerText = calculation;
+  currentSc.innerText = ""; // start computation 
+
+  totalButton.addEventListener("click", function () {
+    preventDefault();
+    console.log(totalButton);
+    var sumTotal;
+    var enteredNum = parseFloat(previousSc.innerText);
+    var newNum = parseFloat(currentSc.innerText);
+    if (isNaN(enteredNum) || isNaN(newNum)) return;
+    sumTotal = enteredNum / newNum;
+    currentSc.innerText = sumTotal;
+    previousSc.innerText = "";
+  });
+}); // Percentage Operation button click functionality 
+
+pcent.addEventListener("click", function () {
+  console.log(pcent);
+  if (currentSc.innerText === "") return;
+
+  if (previousSc.innerText !== "") {
+    answer();
+  } // Shift number to top section and add operation sign
+
+
+  var calculation = currentSc.innerText + " " + pcent.innerText;
+  previousSc.innerText = calculation;
+  currentSc.innerText = ""; // start computation 
+
+  totalButton.addEventListener("click", function () {
+    preventDefault();
+    console.log(totalButton);
+    var sumTotal;
+    var enteredNum = parseFloat(previousSc.innerText);
+    var newNum = parseFloat(currentSc.innerText);
+    if (isNaN(enteredNum) || isNaN(newNum)) return;
+    sumTotal = enteredNum % newNum;
+    currentSc.innerText = sumTotal;
+    previousSc.innerText = "";
+  });
+}); // Square Root Operation button click functionality 
+
+sqRoot.addEventListener("click", function () {
+  console.log(sqRoot);
+  if (currentSc.innerText === "") return;
+
+  if (previousSc.innerText !== "") {
+    answer();
+  } // Shift number to top section and add operation sign
+
+
+  var calculation = currentSc.innerText + " " + sqRoot.innerText;
+  previousSc.innerText = calculation;
+  currentSc.innerText = ""; // start computation 
+
+  totalButton.addEventListener("click", function () {
+    console.log(totalButton);
+    var sumTotal;
+    var enteredNum = parseFloat(previousSc.innerText);
+    var newNum = parseFloat(currentSc.innerText);
+    if (isNaN(enteredNum) || isNaN(newNum)) return;
+    sumTotal = Math.sqrt(enteredNum);
+    currentSc.innerText = sumTotal;
+    previousSc.innerText = "";
   });
 }); // add All Clear button click functionality
 
@@ -122,9 +265,8 @@ cancelButton.addEventListener("click", back);
 console.log(cancelButton); // Delete last number
 // currentSc.innerText = currentSc.innerText.toString().slice(0, -1)
 // add All Equals button click functionality
-
-totalButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  answer();
-  console.log(totalButton);
-});
+// totalButton.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     answer()
+//     console.log(totalButton);
+// });

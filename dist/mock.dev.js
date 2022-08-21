@@ -1,5 +1,7 @@
 "use strict";
 
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+
 // ALL HTML elements is variables:
 var numbersButton = document.getElementsByClassName("calculator__buttons--number");
 console.log(numbersButton);
@@ -61,6 +63,8 @@ console.log(test); // Append number function
 var clear = function clear() {
   currentSc.innerText = "";
   previousSc.innerText = "";
+  previousSc = (_readOnlyError("previousSc"), "");
+  currentSc = (_readOnlyError("currentSc"), "");
 }; // Update display function
 // Delete item on display function
 
@@ -141,6 +145,7 @@ add.addEventListener("click", function () {
     sumTotal = enteredNum + newNum;
     currentSc.innerText = sumTotal;
     previousSc.innerText = "";
+    return;
   });
 }); // subtraction Operation button click functionality 
 
