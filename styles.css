@@ -199,13 +199,10 @@ footer {
   }
 
   .imageBox {
-    max-width: 100%;
-    height: auto;
     display: none;
   }
   .imageBox__pic {
-    max-width: 100%;
-    height: auto;
+    display: none;
   }
 }
 @media screen and (max-width: 750px) {
@@ -214,13 +211,10 @@ footer {
   }
 
   .imageBox {
-    max-width: 100%;
-    height: auto;
     display: none;
   }
   .imageBox__pic {
-    max-width: 100%;
-    height: auto;
+    display: none;
   }
 }
 @media screen and (max-width: 900px) {

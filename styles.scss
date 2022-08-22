@@ -86,6 +86,7 @@ main {
         background-color: azure;
         border-radius: 15px;
 
+
         #screenPrev {
             max-width: 95%;
             height: 50%;
@@ -262,13 +263,11 @@ footer {
     }
 
     .imageBox {
-        max-width: 100%;
-        height: auto;
+
         display: none;
     
         &__pic {
-            max-width: 100%;
-            height: auto;
+            display: none;
     }
     
     }
@@ -280,13 +279,11 @@ footer {
     }
 
     .imageBox {
-        max-width: 100%;
-        height: auto;
+
         display: none;
     
         &__pic {
-            max-width: 100%;
-            height: auto;
+            display: none;
     }
     
     }
