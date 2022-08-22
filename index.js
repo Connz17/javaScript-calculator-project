@@ -54,12 +54,13 @@ console.log(sign);
 // Handle Operation function
 
 // Clear Display function
-const clear = () => {
-    currentSc.innerText = ""
-    previousSc.innerText = ""
-    previousSc.innerHTML = ""
-    currentSc.innerHTML = ""
-} 
+// const clear = () => {
+//     currentSc.innerText = ""
+//     previousSc.innerText = ""
+//     previousSc.innerHTML = ""
+//     currentSc.innerHTML = ""
+//     window.location.reload;
+// } 
 
 // Update display function
 
@@ -70,45 +71,7 @@ const back = () => {
 }
 
 // Final total function 
-const answer = () => {
-    
-    let sumTotal 
-    const enteredNum = parseFloat(previousSc.innerText)
-    const newNum = parseFloat(currentSc.innerText)    
-    if (isNaN(enteredNum) || isNaN(newNum)) return
 
-    
-const sings = [sqRoot.innerText, pcent.innerText, divide.innerText, times.innerText, minus.innerText, addition.innerText];
-console.log(sings);
-
-    for (let index = 0; index < sings.length; index++) {
-        if (sings.includes("√")) {
-            sumTotal = Math.sqrt(enteredNum);
-            console.log("square");
-        } else if (sings.includes("÷")) {
-            sumTotal = enteredNum / newNum;
-            console.log("divide");
-        } else if (sings.includes("X")) {
-            sumTotal = enteredNum * newNum;
-            console.log("times");
-        } else if (sings.includes("-")) { 
-            sumTotal = enteredNum - newNum;
-            console.log("minus");
-        } else if (sings.includes["+"]) {
-            sumTotal = enteredNum + newNum
-            console.log("plus");
-        } else if (sings.includes["%"]) {
-            sumTotal = enteredNum % newNum
-            console.log("percent");
-        } else { 
-            console.log("no computation happening");
-        }
-}
-    currentSc.innerText = sumTotal
-    previousSc.innerText = "";
-    return
-    
-}
 
 // Add Number button click functionality 
 numbersBtns.forEach((number) => {
@@ -127,7 +90,6 @@ addition.addEventListener("click", () => {
     console.log(addition);
     if (currentSc.innerText === "") return;
     if (previousSc.innerText !== "") {
-        answer()
     }
 // Shift number to top section and add operation sign
     const calculation = currentSc.innerText + " " + addition.innerText
@@ -143,11 +105,10 @@ addition.addEventListener("click", () => {
     if (isNaN(enteredNum) || isNaN(newNum)) return
 
     sumTotal = enteredNum + newNum
-    currentSc.innerText = sumTotal
-    previousSc.innerText = "";
+    currentSc.innerText = "The answer is: " + sumTotal
+    previousSc.innerText = "Please use the AC button";
     return;    
     })  
-return
 });        
 
 // subtraction Operation button click functionality 
@@ -155,7 +116,6 @@ minus.addEventListener("click", () => {
     console.log(minus);
     if (currentSc.innerText === "") return;
     if (previousSc.innerText !== "") {
-        answer()
     }
 // Shift number to top section and add operation sign
     const calculation = currentSc.innerText + " " + minus.innerText
@@ -163,7 +123,6 @@ minus.addEventListener("click", () => {
     currentSc.innerText = ""
 // start computation 
     totalButton.addEventListener("click", () => {
-    preventDefault()        
     console.log(totalButton);
 
     let sumTotal 
@@ -172,8 +131,8 @@ minus.addEventListener("click", () => {
     if (isNaN(enteredNum) || isNaN(newNum)) return
 
     sumTotal = enteredNum - newNum
-    currentSc.innerText = sumTotal
-    previousSc.innerText = "";
+    currentSc.innerText =  "The answer is: " + sumTotal
+    previousSc.innerText = "Please use the AC button";
 })    
 });        
 
@@ -190,7 +149,6 @@ times.addEventListener("click", () => {
     currentSc.innerText = ""
 // start computation 
     totalButton.addEventListener("click", () => {
-    preventDefault()
     console.log(totalButton);
 
     let sumTotal 
@@ -199,8 +157,8 @@ times.addEventListener("click", () => {
     if (isNaN(enteredNum) || isNaN(newNum)) return
 
     sumTotal = enteredNum * newNum
-    currentSc.innerText = sumTotal
-    previousSc.innerText = "";
+    currentSc.innerText = "The answer is: " + sumTotal
+    previousSc.innerText = "Please use the AC button";
 })    
 });        
 
@@ -209,7 +167,6 @@ divide.addEventListener("click", () => {
     console.log(divide);
     if (currentSc.innerText === "") return;
     if (previousSc.innerText !== "") {
-        answer()
     }
 // Shift number to top section and add operation sign
     const calculation = currentSc.innerText + " " + divide.innerText
@@ -217,7 +174,6 @@ divide.addEventListener("click", () => {
     currentSc.innerText = ""
 // start computation 
     totalButton.addEventListener("click", () => {
-    preventDefault()
     console.log(totalButton);
 
     let sumTotal 
@@ -226,17 +182,16 @@ divide.addEventListener("click", () => {
     if (isNaN(enteredNum) || isNaN(newNum)) return
 
     sumTotal = enteredNum / newNum
-    currentSc.innerText = sumTotal
-    previousSc.innerText = "";
+    currentSc.innerText = "The answer is: " + sumTotal
+    previousSc.innerText = "Please use the AC button";
 })    
 });        
-   
+
 // Percentage Operation button click functionality 
 pcent.addEventListener("click", () => {
     console.log(pcent);
     if (currentSc.innerText === "") return;
     if (previousSc.innerText !== "") {
-        answer()
     }
 // Shift number to top section and add operation sign
     const calculation = currentSc.innerText + " " + pcent.innerText
@@ -244,7 +199,6 @@ pcent.addEventListener("click", () => {
     currentSc.innerText = ""
 // start computation 
     totalButton.addEventListener("click", () => {
-    preventDefault()
     console.log(totalButton);
 
     let sumTotal 
@@ -253,17 +207,16 @@ pcent.addEventListener("click", () => {
     if (isNaN(enteredNum) || isNaN(newNum)) return
 
     sumTotal = enteredNum % newNum
-    currentSc.innerText = sumTotal
-    previousSc.innerText = "";
+    currentSc.innerText = "The answer is: " + sumTotal
+    previousSc.innerText = "Please use the AC button";
 })    
 });        
-   
+
 // Square Root Operation button click functionality 
 sqRoot.addEventListener("click", () => {
     console.log(sqRoot);
     if (currentSc.innerText === "") return;
     if (previousSc.innerText !== "") {
-        answer()
     }
 // Shift number to top section and add operation sign
     const calculation = currentSc.innerText + " " + sqRoot.innerText
@@ -271,7 +224,6 @@ sqRoot.addEventListener("click", () => {
     currentSc.innerText = ""
 // start computation 
     totalButton.addEventListener("click", () => {
-    
     console.log(totalButton);
 
     let sumTotal 
@@ -280,16 +232,20 @@ sqRoot.addEventListener("click", () => {
     if (isNaN(enteredNum) || isNaN(newNum)) return
 
     sumTotal = Math.sqrt(enteredNum)
-    currentSc.innerText = sumTotal
-    previousSc.innerText = "";
+    currentSc.innerText = "The answer is: " + sumTotal
+    previousSc.innerText = "Please use the AC button";
 })    
 });        
-   
 
 // add All Clear button click functionality
-clearButton.addEventListener("click", (clear))
-    console.log(clearButton);
-// Clear the display
+clearButton.onclick = () => {
+    window.location.reload();
+}
+
+
+// addEventListener("click", (clear))
+//     console.log(clearButton);
+// // Clear the display
     // currentSc.innerHTML = ""
     // previousSc.innerHTML = ""
 

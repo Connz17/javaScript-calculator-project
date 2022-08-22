@@ -1,0 +1,41 @@
+
+// media screen settings
+
+
+//  480px: Mobile devices. under 480 70%
+//  768px: iPads, Tablets. 50%
+//  1024px: Small screens, laptops. 33%
+//  1200px: Desktops, large screens. 27%
+// 1201px and more — Extra large screens, TV. 25%
+
+
+@media screen and (max-width: 600px) {
+    .calculator {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .calculator {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .calculator {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .calculator {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .calculator {
+        width: 25%;
+    }
+}
+
