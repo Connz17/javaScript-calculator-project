@@ -1,4 +1,3 @@
-@use "./responsiveness" as *;
 
 * { margin: 0;
     padding: 0;
@@ -34,12 +33,17 @@ main {
 
 
 
-img {
+.imageBox {
     max-width: 100%;
     height: auto;
-    display: none;
+    // display: none;
+
+    &__pic {
+        max-width: 100%;
+        height: auto;
 }
 
+}
 
 .calculator {
     margin: auto;
@@ -257,55 +261,105 @@ footer {
         width: 80%;
     }
 
-    image {
+    .imageBox {
+        max-width: 100%;
+        height: auto;
         display: none;
+    
+        &__pic {
+            max-width: 100%;
+            height: auto;
     }
     
+    }
 }
 
-@media screen and (min-width: 590px) {
+@media screen and (max-width: 750px) {
     .calculator {
         width: 70%;
     }
 
-    image {
+    .imageBox {
+        max-width: 100%;
+        height: auto;
         display: none;
+    
+        &__pic {
+            max-width: 100%;
+            height: auto;
     }
     
+    }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 900px) {
     .calculator {
         width: 60%;
     }
 
-    image {
-        display: none;
+    .imageBox {
+        width: 20%;
+        height: 90%;
+    
+        &__pic {
+            max-width: 100%;
+            height: auto;
+    }
+    
     }
     
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .calculator {
         width: 40%;
     }
-
+    .imageBox {
+        width: 50%;
+        height: 90%;
+    
+        &__pic {
+            max-width: 100%;
+            height: auto;
+    }
+    
+    }
 
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .calculator {
         width: 30%;
     }
+
+    .imageBox {
+        width: 50%;
+        height: 90%;
+    
+        &__pic {
+            max-width: 100%;
+            height: auto;
+    }
+    
+    }
+
 }
 
 @media screen and (min-width: 1201px) {
     .calculator {
         width: 25%;
     }
+        .imageBox {
+        width: 50%;
+        height: 90%;
     
-    img {
-        display: flex;
+        &__pic {
+            max-width: 100%;
+            height: auto;
     }
+    
+    }
+
+    
 }
 
