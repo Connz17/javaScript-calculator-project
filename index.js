@@ -216,26 +216,16 @@ pcent.addEventListener("click", () => {
 sqRoot.addEventListener("click", () => {
     console.log(sqRoot);
     if (currentSc.innerText === "") return;
-    if (previousSc.innerText !== "") {
-    }
-// Shift number to top section and add operation sign
-    const calculation = currentSc.innerText + " " + sqRoot.innerText
-    previousSc.innerText = calculation;
-    currentSc.innerText = ""
 // start computation 
-    totalButton.addEventListener("click", () => {
-    console.log(totalButton);
-
     let sumTotal 
-    const enteredNum = parseFloat(previousSc.innerText)
-    const newNum = parseFloat(currentSc.innerText)    
-    if (isNaN(enteredNum) || isNaN(newNum)) return
+    const enteredNum = parseFloat(currentSc.innerText)
+    if (isNaN(enteredNum)) return
 
     sumTotal = Math.sqrt(enteredNum)
     currentSc.innerText = "The answer is: " + sumTotal
     previousSc.innerText = "Please use the AC button";
 })    
-});        
+;        
 
 // add All Clear button click functionality
 clearButton.onclick = () => {

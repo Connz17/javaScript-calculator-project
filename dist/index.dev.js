@@ -182,25 +182,14 @@ pcent.addEventListener("click", function () {
 
 sqRoot.addEventListener("click", function () {
   console.log(sqRoot);
-  if (currentSc.innerText === "") return;
+  if (currentSc.innerText === "") return; // start computation 
 
-  if (previousSc.innerText !== "") {} // Shift number to top section and add operation sign
-
-
-  var calculation = currentSc.innerText + " " + sqRoot.innerText;
-  previousSc.innerText = calculation;
-  currentSc.innerText = ""; // start computation 
-
-  totalButton.addEventListener("click", function () {
-    console.log(totalButton);
-    var sumTotal;
-    var enteredNum = parseFloat(previousSc.innerText);
-    var newNum = parseFloat(currentSc.innerText);
-    if (isNaN(enteredNum) || isNaN(newNum)) return;
-    sumTotal = Math.sqrt(enteredNum);
-    currentSc.innerText = "The answer is: " + sumTotal;
-    previousSc.innerText = "Please use the AC button";
-  });
+  var sumTotal;
+  var enteredNum = parseFloat(currentSc.innerText);
+  if (isNaN(enteredNum)) return;
+  sumTotal = Math.sqrt(enteredNum);
+  currentSc.innerText = "The answer is: " + sumTotal;
+  previousSc.innerText = "Please use the AC button";
 }); // add All Clear button click functionality
 
 clearButton.onclick = function () {
