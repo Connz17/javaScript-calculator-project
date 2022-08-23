@@ -30,7 +30,7 @@ main {
 }
 
 .imageBox {
-  max-width: 100%;
+  width: 25%;
   height: auto;
 }
 .imageBox__pic {
@@ -193,9 +193,9 @@ footer {
   height: 20%;
 }
 
-@media screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   .calculator {
-    width: 80%;
+    width: 85%;
   }
 
   .imageBox {
@@ -205,21 +205,23 @@ footer {
     display: none;
   }
 }
-@media screen and (max-width: 750px) {
+@media only screen and (min-width: 750px) {
   .calculator {
-    width: 70%;
+    width: 65%;
   }
 
   .imageBox {
-    display: none;
+    width: 15%;
+    height: 100%;
   }
   .imageBox__pic {
-    display: none;
+    max-width: 100%;
+    height: auto;
   }
 }
-@media screen and (max-width: 900px) {
+@media only screen and (min-width: 900px) {
   .calculator {
-    width: 60%;
+    width: 55%;
   }
 
   .imageBox {
@@ -231,13 +233,27 @@ footer {
     height: auto;
   }
 }
-@media screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .calculator {
+    width: 35%;
+  }
+
+  .imageBox {
+    width: 30%;
+    height: 100%;
+  }
+  .imageBox__pic {
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .calculator {
+    width: 30%;
+  }
+
+  .imageBox {
     width: 40%;
-  }
-
-  .imageBox {
-    width: 30%;
     height: 100%;
   }
   .imageBox__pic {
@@ -245,27 +261,13 @@ footer {
     height: auto;
   }
 }
-@media screen and (max-width: 1200px) {
-  .calculator {
-    width: 30%;
-  }
-
-  .imageBox {
-    width: 45%;
-    height: 100%;
-  }
-  .imageBox__pic {
-    max-width: 100%;
-    height: auto;
-  }
-}
-@media screen and (min-width: 1201px) {
+@media only screen and (min-width: 1201px) {
   .calculator {
     width: 25%;
   }
 
   .imageBox {
-    width: 50%;
+    width: 45%;
     height: 100%;
   }
   .imageBox__pic {

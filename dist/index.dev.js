@@ -174,7 +174,7 @@ pcent.addEventListener("click", function () {
     var enteredNum = parseFloat(previousSc.innerText);
     var newNum = parseFloat(currentSc.innerText);
     if (isNaN(enteredNum) || isNaN(newNum)) return;
-    sumTotal = enteredNum % newNum;
+    sumTotal = enteredNum / 100 * newNum;
     currentSc.innerText = "The answer is: " + sumTotal;
     previousSc.innerText = "Please use the AC button";
   });

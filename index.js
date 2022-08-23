@@ -206,7 +206,7 @@ pcent.addEventListener("click", () => {
     const newNum = parseFloat(currentSc.innerText)    
     if (isNaN(enteredNum) || isNaN(newNum)) return
 
-    sumTotal = enteredNum % newNum
+    sumTotal = enteredNum / 100 * newNum
     currentSc.innerText = "The answer is: " + sumTotal
     previousSc.innerText = "Please use the AC button";
 })    
