@@ -54,7 +54,6 @@ var back = function back() {
 
 numbersBtns.forEach(function (number) {
   number.addEventListener("click", function () {
-    console.log(number);
     number.toString = number.innerText;
     var bigNum = number.toString;
     if (number.innerText === "." && currentSc.innerText.includes(".")) return;

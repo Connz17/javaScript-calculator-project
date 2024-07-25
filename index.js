@@ -76,7 +76,6 @@ const back = () => {
 // Add Number button click functionality 
 numbersBtns.forEach((number) => {
     number.addEventListener("click", () => {
-        console.log(number);
         number.toString = number.innerText;
         const bigNum = number.toString
         if (number.innerText === "." && currentSc.innerText.includes(".")) return
