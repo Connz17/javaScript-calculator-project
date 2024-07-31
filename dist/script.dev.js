@@ -2,20 +2,13 @@
 
 // Grab all calculator buttons
 var numbersBtns = document.querySelectorAll(".calculator__buttons--number");
-console.log(numbersBtns);
 var operationsBtns = document.querySelectorAll(".calculator__buttons--operation");
-console.log(operationsBtns);
 var clearButton = document.getElementById("AC");
-console.log(clearButton);
 var backspaceButton = document.getElementById("delete");
-console.log(backspaceButton);
-var equalsButton = document.getElementById("equals");
-console.log(equalsButton); // Grab Screen elements
+var equalsButton = document.getElementById("equals"); // Grab Screen elements
 
 var bottomScreen = document.getElementById("bottomScreen");
-console.log(bottomScreen);
-var topScreen = document.getElementById("topScreen");
-console.log(topScreen); // Functions
+var topScreen = document.getElementById("topScreen"); // Functions
 
 var appendNumber = function appendNumber(number) {
   if (number === "." && bottomScreen.innerText.includes(".")) return;
@@ -61,7 +54,15 @@ var calculateAnswer = function calculateAnswer() {
       calculation = previousNum / currentNum;
       break;
 
+    case '/':
+      calculation = previousNum / currentNum;
+      break;
+
     case 'X':
+      calculation = previousNum * currentNum;
+      break;
+
+    case '*':
       calculation = previousNum * currentNum;
       break;
 
@@ -79,25 +80,7 @@ var calculateAnswer = function calculateAnswer() {
 
   bottomScreen.innerText = calculation;
   topScreen.innerText = '';
-}; // const updateDisplayNumber = (number) => {
-//     const stringNumber = number.toString()
-//     const integerDigits = parseFloat(stringNumber.split('.')[0])
-//     const decimalDigits = stringNumber.split('.')[1]
-//     let intDisplay 
-//     if(isNaN(integerDigits)) {
-//         intDisplay = ''
-//     } else {
-//         intDisplay = integerDigits.toLocaleString('en', {
-//             maximumFractionDigits: 0
-//         }) 
-//     }
-//     if (decimalDigits != null) {
-//         return `${intDisplay}.${decimalDigits}`
-//     } else {
-//         return intDisplay
-//     }
-// }
-
+};
 
 numbersBtns.forEach(function (number) {
   number.addEventListener("click", function () {
@@ -112,3 +95,16 @@ operationsBtns.forEach(function (operation) {
 equalsButton.addEventListener("click", calculateAnswer);
 clearButton.addEventListener("click", clearScreen);
 backspaceButton.addEventListener("click", removeLastInput);
+document.addEventListener("keydown", function (event) {
+  if (!isNaN(event.key) || event.key === ".") {
+    appendNumber(event.key);
+  } else if (event.key === "/" || event.key === "*" || event.key === "-" || event.key === "+") {
+    selectOperation(event.key);
+  } else if (event.key === "Enter") {
+    calculateAnswer();
+  } else if (event.key === "Backspace") {
+    removeLastInput();
+  } else if (event.key === "Delete") {
+    clearScreen();
+  }
+});

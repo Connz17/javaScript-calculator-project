@@ -1,25 +1,18 @@
 // Grab all calculator buttons
 const numbersBtns = document.querySelectorAll(".calculator__buttons--number");
-console.log(numbersBtns);
 
 const operationsBtns = document.querySelectorAll(".calculator__buttons--operation")
-console.log(operationsBtns);
 
 const clearButton = document.getElementById("AC");
-console.log(clearButton);
 
 const backspaceButton = document.getElementById("delete");
-console.log(backspaceButton);
 
 const equalsButton = document.getElementById("equals");
-console.log(equalsButton);
 
 // Grab Screen elements
 const bottomScreen = document.getElementById("bottomScreen");
-console.log(bottomScreen);
 
 const topScreen = document.getElementById("topScreen");
-console.log(topScreen);
 
 // Functions
 const appendNumber = (number) => {
@@ -60,7 +53,13 @@ const calculateAnswer = () => {
         case '÷':
             calculation = previousNum / currentNum
             break;
+        case '/':
+            calculation = previousNum / currentNum
+            break;
         case 'X':
+            calculation = previousNum * currentNum
+            break;
+        case '*':
             calculation = previousNum * currentNum
             break;
         case '%':
@@ -76,31 +75,12 @@ const calculateAnswer = () => {
     topScreen.innerText = ''    
 }
 
-// const updateDisplayNumber = (number) => {
-//     const stringNumber = number.toString()
-//     const integerDigits = parseFloat(stringNumber.split('.')[0])
-//     const decimalDigits = stringNumber.split('.')[1]
-//     let intDisplay 
-//     if(isNaN(integerDigits)) {
-//         intDisplay = ''
-//     } else {
-//         intDisplay = integerDigits.toLocaleString('en', {
-//             maximumFractionDigits: 0
-//         }) 
-//     }
-//     if (decimalDigits != null) {
-//         return `${intDisplay}.${decimalDigits}`
-//     } else {
-//         return intDisplay
-//     }
-// }
 
 numbersBtns.forEach((number) => {
     number.addEventListener("click", () => {
         appendNumber(number.value)
     })
 })
-
 
 operationsBtns.forEach((operation) =>{
     operation.addEventListener("click", ()=>{
@@ -111,3 +91,21 @@ operationsBtns.forEach((operation) =>{
 equalsButton.addEventListener("click", (calculateAnswer))
 clearButton.addEventListener("click", (clearScreen))
 backspaceButton.addEventListener("click",(removeLastInput))
+
+document.addEventListener("keydown", (event)=>{
+    if(!isNaN(event.key) || event.key === ".") {
+        appendNumber(event.key)
+    } else if (event.key === "/" || event.key === "*" || event.key === "-" || event.key === "+") {
+        selectOperation(event.key)
+    } else if (event.key === "Enter"){
+        calculateAnswer()
+    } else if (event.key === "Backspace"){
+        removeLastInput()
+    } else if (event.key === "Delete"){
+        clearScreen()
+    }
+})
+
+
+
+
