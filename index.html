@@ -1,68 +1,52 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <title>Calculator</title>
+    <link rel="stylesheet" href="./design.css">
+    <title>Web Calculator</title>
 </head>
 <body>
-    <!-- Title and Head  -->
-    <header>
-        <div>
-            <h1>Single use Calculator</h1>
-        </div>
-    </header>
-    <!-- Housing of calculator grid -->
+    <header></header>
     <main>
-        <div class= "imageBox">
-            <img class= "imageBox__pic" src="./images/kisspng-chinese-mathematics-mathematical-notation-mathemat-math-operations-5b2cbd6b32b256.4450062815296587312077.png" alt="Maths signs">
-        </div>
-        <div class="calculator">
+        <h1 id="title">Calculator</h1>
+        <div id="calculator">
             <!-- Output Screen-->
-            <div class="calculator__screen" id="screen">
-                <div class="prevOutput" id="screenPrev"></div>
-                <div class="currOutput" id="screenCurr"></div>
+            <div class="calculator__screen">
+                <div id="topScreen"></div>
+                <div id="bottomScreen"></div>
             </div>
-            <!-- 1st row of buttons -->
-            <div class="calculator__buttons" id="AC">AC</div>
-            <div class="calculator__buttons--operation" id="root">√</div>
-            <div class="calculator__buttons--operation" id="percentage">%</div>
-            <div class="calculator__buttons--operation" id="divide">÷</div>
-            
-            <!-- 2nd row of buttons -->
-            <div class="calculator__buttons--number" id="eight">8</div>
-            <div class="calculator__buttons--number" id="seven">7</div>
-            <div class="calculator__buttons--number" id="nine">9</div>
-            <div class="calculator__buttons--operation" id="multiply">X</div>
+                <!-- 1st row of buttons -->
+                <button type="button" class="calculator__buttons" id="AC">AC</button>
+                <button type="button" class="calculator__buttons--operation" id="root">√</button>
+                <button type="button" class="calculator__buttons--operation" id="percentage">%</button>
+                <button type="button" class="calculator__buttons--operation" id="divide">÷</button>
+                
+                <!-- 2nd row of buttons -->
+                <button type="button" class="calculator__buttons--number" id="eight" value="8">8</button>
+                <button type="button" class="calculator__buttons--number" id="seven" value="7">7</button>
+                <button type="button" class="calculator__buttons--number" id="nine" value="9">9</button>
+                <button type="button" class="calculator__buttons--operation" id="multiply">X</button>
 
-            <!-- 3rd row of buttons -->
-            <div class="calculator__buttons--number" id="four">4</div>
-            <div class="calculator__buttons--number" id="five">5</div>
-            <div class="calculator__buttons--number" id="six">6</div>
-            <div class="calculator__buttons--operation" id="takeAway">-</div>
+                <!-- 3rd row of buttons -->
+                <button type="button" class="calculator__buttons--number" id="four" value="4">4</button>
+                <button type="button" class="calculator__buttons--number" id="five" value="5">5</button>
+                <button type="button" class="calculator__buttons--number" id="six" value="6">6</button>
+                <button type="button" class="calculator__buttons--operation" id="takeAway">-</button>
 
-            <!-- 4th row of buttons -->
-            <div class="calculator__buttons--number" id="one">1</div>
-            <div class="calculator__buttons--number" id="two">2</div>
-            <div class="calculator__buttons--number" id="three">3</div>
-            <div class="calculator__buttons--operation" id="plus">+</div>
+                <!-- 4th row of buttons -->
+                <button type="button" class="calculator__buttons--number" id="one" value="1">1</button>
+                <button type="button" class="calculator__buttons--number" id="two" value="2">2</button>
+                <button type="button" class="calculator__buttons--number" id="three" value="3">3</button>
+                <button type="button" class="calculator__buttons--operation" id="plus">+</button>
 
-            <!-- 5th row of buttons -->
-            <div class="calculator__buttons--number" id="nil">0</div>
-            <div class="calculator__buttons--number" id="decimal">.</div>
-            <div class="calculator__buttons" id="delete">DEL</div>
-            <div class="calculator__buttons" id="equals">=</div>
-        </div>
-        <div class = imageBox>
-            <img class="imageBox__pic" src="./images/kisspng-mathematics-orange-middle-school-mathematical-nota-fall-creative-5ae2d3aba90046.2649641515248147636922.png" alt="Math tree">
+                <!-- 5th row of buttons -->
+                <button type="button" class="calculator__buttons--number" id="nil" value="0">0</button>
+                <button type="button" class="calculator__buttons--number" id="decimal" value=".">.</button>
+                <button type="button" class="calculator__buttons" id="delete">⌫</button>
+                <button type="button" class="calculator__buttons" id="equals">=</button>
         </div>
     </main>
-    <!-- bottom footer -->
-    <p>(*Please press the All Clear button after each calculation)</p>
-    <footer>
-        <div></div>
-    </footer>    
-    <script src="./index.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
