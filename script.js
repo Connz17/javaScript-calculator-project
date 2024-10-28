@@ -75,7 +75,6 @@ const calculateAnswer = () => {
     topScreen.innerText = ''    
 }
 
-
 numbersBtns.forEach((number) => {
     number.addEventListener("click", () => {
         appendNumber(number.value)

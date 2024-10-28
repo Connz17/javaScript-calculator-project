@@ -6,8 +6,21 @@
     font-family: "Cinzel", serif; 
 }
 
+body {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+#title{
+    margin: 2rem;
+    text-align: center;
+}
+
 #calculator {
-    border: 5px solid black;
+    border: 5px solid rgb(5, 5, 5);
+    background-color: rgb(177, 177, 177);
     margin: auto;
     width: 20rem;
     height: 37rem; 
