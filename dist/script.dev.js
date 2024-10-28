@@ -1,97 +1,110 @@
-// const numbers = document.getElementsByClassName("calculator__buttons--number");
-// console.log(numbers);
-// const operations = document.getElementsByClassName("calculator__buttons--operation");
-// console.log(operations);
-// const currentSc = document.getElementById("screenCurr");
-// console.log(currentSc);
-// const previousSc = document.getElementById("screenPrev");
-// console.log(previousSc);
-// const clear = document.getElementById("AC");
-// console.log(clear);
-// const cancel = document.getElementById("delete");
-// console.log(cancel);
-// const total = document.getElementById("equals");
-// console.log(total);
-// clear.onclick = () => {
-//     previousSc = "";
-//     currentSc = "";
-//     operations = "";
-// } 
-// updateScreen () {
-//     currentSc.innerText = currentSc;
-// }
-// appendNumber (number) {
-//     currentSc = number;
-// }
-// selectOperation (operation) {
-// }
-// numbers.forEach((numberButton) => {
-//     numberButton.addEventListener("click", () => {
-//         currentSc.appendNumber(numberButton)
-//     });
-//   });
-// const typeNumber = numbers.target 
-// // getElementsByTagName
-// const todoHeading = document.getElementsByTagName("h1")[0];
-// todoHeading.innerHTML += " Today!";
-// console.log(todoHeading);
-// // getElementsByClassName
-// // getElementById
-// const addButton = document.getElementById("add-button");
-// console.log(addButton);
-// // querySelector
-// const inputBox = document.querySelector("input");
-// console.log(inputBox);
-// const list = document.querySelector("ul");
-// console.log(list);
-// // querySelectorAll
-// const items = document.querySelectorAll("li");
-// console.log(items);
-// numbers.forEach((numberButton) => {
-//      numberButton.addEventListener("click", handleNumberPress);
-//    });
-// set previous number variable equal to zero. 
-// let previousNumb = (" ");
-// console.log(previousNumb);
-// const handleNumberPress = () => {
-//     previousNumb += numbers     
-//     console.log(handleNumberPress);
-//     }
-//     numbers.forEach((number) => {
-//         number.addEventListener("click", handleNumberPress);
-//     });
-// functions of My calculator:
-// let press1 = document.getElementById("one");
-// press1.addEventListener("click", myFunction);
-// function myFunction() {
-//     console.log(1)
-//     document.getElementById("screenCurr").innerHTML = "1";
-// }
-// const press2 = document.getElementById("two");
-// press2.addEventListener("click", function() {
-//     document.getElementById("screenCurr").innerHTML = "2";
-// });
-// const press3 = document.getElementById("three");
-//     press3.onclick = function() {
-//         document.getElementById("screenCurr").innerHTML = "3"; 
-//     }
-// const numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-// console.log(numbers[2]);
-// constructor ()
-// JS Property (unknown)
-// press.onclick
-// ADD EVENT LISTENER CODE
-// element.addEventListener("click", myFunction);
-// 
-// function myFunction() {
-//   document.getElementById("demo").innerHTML = "Hello World";
-// }
-// ADD EVENT LISTENER CODE (SHORT)
-// element.addEventListener("click", function() {
-// document.getElementById("demo").innerHTML = "Hello World";
-//   });
-// clearButton.addEventListener("click", handleClearPress);
-// numbers.forEach((numberButton) => {
-// numberButton.addEventListener("click", handleNumberPress);
-//   });
 "use strict";
+
+// Grab all calculator buttons
+var numbersBtns = document.querySelectorAll(".calculator__buttons--number");
+var operationsBtns = document.querySelectorAll(".calculator__buttons--operation");
+var clearButton = document.getElementById("AC");
+var backspaceButton = document.getElementById("delete");
+var equalsButton = document.getElementById("equals"); // Grab Screen elements
+
+var bottomScreen = document.getElementById("bottomScreen");
+var topScreen = document.getElementById("topScreen"); // Functions
+
+var appendNumber = function appendNumber(number) {
+  if (number === "." && bottomScreen.innerText.includes(".")) return;
+  bottomScreen.innerText = bottomScreen.innerText + number.toString();
+};
+
+var removeLastInput = function removeLastInput() {
+  bottomScreen.innerText = bottomScreen.innerText.toString().slice(0, -1);
+};
+
+var clearScreen = function clearScreen() {
+  topScreen.innerText = '';
+  bottomScreen.innerText = '';
+};
+
+var selectOperation = function selectOperation(operation) {
+  if (bottomScreen.innerText === '') return;
+
+  if (topScreen.innerText !== '') {
+    calculateAnswer();
+  }
+
+  topScreen.innerText = "".concat(bottomScreen.innerText, "  ").concat(operation.toString());
+  bottomScreen.innerText = '';
+};
+
+var calculateAnswer = function calculateAnswer() {
+  var calculation;
+  var previousNum = parseFloat(topScreen.innerText);
+  var currentNum = parseFloat(bottomScreen.innerText);
+  if (isNaN(currentNum) || isNaN(previousNum)) return;
+
+  switch (topScreen.innerText.slice(-1)) {
+    case '+':
+      calculation = previousNum + currentNum;
+      break;
+
+    case '-':
+      calculation = previousNum - currentNum;
+      break;
+
+    case '÷':
+      calculation = previousNum / currentNum;
+      break;
+
+    case '/':
+      calculation = previousNum / currentNum;
+      break;
+
+    case 'X':
+      calculation = previousNum * currentNum;
+      break;
+
+    case '*':
+      calculation = previousNum * currentNum;
+      break;
+
+    case '%':
+      calculation = previousNum / 100 * currentNum;
+      break;
+
+    case '√':
+      calculation = Math.sqrt(previousNum);
+      break;
+
+    default:
+      return;
+  }
+
+  bottomScreen.innerText = calculation;
+  topScreen.innerText = '';
+};
+
+numbersBtns.forEach(function (number) {
+  number.addEventListener("click", function () {
+    appendNumber(number.value);
+  });
+});
+operationsBtns.forEach(function (operation) {
+  operation.addEventListener("click", function () {
+    selectOperation(operation.innerText);
+  });
+});
+equalsButton.addEventListener("click", calculateAnswer);
+clearButton.addEventListener("click", clearScreen);
+backspaceButton.addEventListener("click", removeLastInput);
+document.addEventListener("keydown", function (event) {
+  if (!isNaN(event.key) || event.key === ".") {
+    appendNumber(event.key);
+  } else if (event.key === "/" || event.key === "*" || event.key === "-" || event.key === "+") {
+    selectOperation(event.key);
+  } else if (event.key === "Enter") {
+    calculateAnswer();
+  } else if (event.key === "Backspace") {
+    removeLastInput();
+  } else if (event.key === "Delete") {
+    clearScreen();
+  }
+});
